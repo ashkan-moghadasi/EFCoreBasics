@@ -17,8 +17,8 @@ internal class EmployeeProvider:IEmployeeProvider
     {
         _employeeContext = employeeContext;
     }
-    public  Employee? GetEmployee(int id)
+    public  Employee GetEmployee(int id)
     {
-       return  _employeeContext.Employees.FirstOrDefault( e=> e.Id == id);
+       return  _employeeContext.Employees.FirstOrDefault(e => e.Id == id);
     }
 }

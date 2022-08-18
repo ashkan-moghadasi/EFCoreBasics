@@ -1,12 +1,13 @@
-﻿
-using EFCoreDemo.Models;
+﻿using EFCoreDemo.Models;
+using EFCoreDemo.InlineQuery;
+using EFCoreDemo.StoredProcedure;
 using EFCoreDemo.Tests;
+using EFCoreDemo.Transaction;
 
-var emp1= CrudTester.GetEmployee(1);
-emp1.PrintEmployee();
+//CrudTester.CreateEmployee();
+//CrudTester.UpdateEmployee();
+//CheckInlineQuery.GetEmployeeById(1);
+//CheckStoredProcedure.GetEmployeeById(1);
+EmployeeTransactionalCreate.Create();
 
-
-CrudTester.CreateEmployee();
-
-CrudTester.UpdateEmployee();
 

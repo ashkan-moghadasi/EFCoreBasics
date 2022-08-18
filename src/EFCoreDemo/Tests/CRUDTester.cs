@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 using EFCoreDemo.Context;
 using EFCoreDemo.Models;
 using EFCoreDemo.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFCoreDemo.Tests
 {
     internal static class CrudTester
     {
-        private static EmployeeContext? _context;
-         internal static  Employee? GetEmployee(int id)
+        
+         internal static  Employee GetEmployee(int id)
          {
              var context = GetContext();
              var provider = new EmployeeProvider(context);
              var emp= provider.GetEmployee(id);
+             emp?.PrintEmployee();
              return emp;
          }
-
-         internal static  void CreateEmployee()
+        
+        internal static  void CreateEmployee()
          {
              var context = GetContext();
              var repo = new EmployeeRepository(context);
@@ -44,9 +46,8 @@ namespace EFCoreDemo.Tests
         private static EmployeeContext GetContext()
          {
              var connectionString = @"Data Source=.\sqlexpress;Initial Catalog=efcoredemo;Integrated Security=True;Pooling=False";
-             if (_context != null) return _context;
-             _context = new EmployeeContext(connectionString);
-             return _context;
+             return new EmployeeContext(connectionString);
+             
         }
     }
 }

@@ -15,8 +15,9 @@ namespace EFCoreDemo.Context
         public EmployeeContext(string connectionString)
         {
             _connectionString = connectionString;
+            
         }
-        public DbSet<Employee?> Employees { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

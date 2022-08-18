@@ -12,7 +12,7 @@ namespace EFCoreDemo.Models
         {
             if (emp !=null)
             {
-                await Console.Out.WriteLineAsync($"Welcome {emp.Id} {emp.FirstName} {emp.LastName} {emp.Address}");
+                await Console.Out.WriteLineAsync($"EmployeeId:{emp.Id}\tFirstName:{emp.FirstName}\tLastName:{emp.LastName}\tAddress:{emp.Address}");
 
             }
 
