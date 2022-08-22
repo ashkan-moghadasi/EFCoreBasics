@@ -28,6 +28,7 @@ public class CheckInlineQuery
         var connectionString = @"Data Source=.\sqlexpress;Initial Catalog=efcoredemo;Integrated Security=True;Pooling=False";
         var optionBuilder = new DbContextOptionsBuilder();
         optionBuilder.UseSqlServer(connectionString);
+        
         return  new EmployeeContext(optionBuilder.Options);
         
     }
